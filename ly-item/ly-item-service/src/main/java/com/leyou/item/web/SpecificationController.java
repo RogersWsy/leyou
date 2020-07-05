@@ -17,6 +17,11 @@ public class SpecificationController {
     @Autowired
     private SpecificationService specificationService;
 
+    /**
+     * 根据分类查询分类下的所有规格组
+     * @param cid
+     * @return
+     */
     @GetMapping("/groups/{cid}")
     public ResponseEntity<List<SpecGroup>> queryGroupByCid(@PathVariable("cid")Long cid){
         return ResponseEntity.ok(specificationService.queryGroupByCid(cid));
@@ -28,6 +33,13 @@ public class SpecificationController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
+    /**
+     * 根据组ID查询组内的所有规格参数
+     * @param gid
+     * @param cid
+     * @param searching
+     * @return
+     */
     @GetMapping("params")
     public ResponseEntity<List<SpecParam>> queryParam(
             @RequestParam(value = "gid", required = false) Long gid,

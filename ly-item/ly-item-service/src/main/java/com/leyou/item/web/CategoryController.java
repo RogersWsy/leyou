@@ -29,4 +29,14 @@ public class CategoryController {
         List<Category> list = categoryService.queryByParentId(pid);
         return ResponseEntity.ok(list);
     }
+
+    /**
+     * 根据多个ID查询多个分类
+     * @param idList
+     * @return
+     */
+    @GetMapping("list/ids")
+    public ResponseEntity<List<Category>> queryByIdList(@RequestParam("ids") List<Long> idList){
+        return ResponseEntity.ok(categoryService.queryByIds(idList));
+    }
 }

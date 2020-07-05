@@ -63,6 +63,9 @@ public class GoodsServiceImpl implements GoodsService {
         if(saleable != null){
             criteria.andEqualTo("saleable",saleable);
         }
+//      2.3 过滤被逻辑删除的数据
+        criteria.andEqualTo("valid",true);
+
 //      3   排序（按更新时间）
         example.setOrderByClause("last_update_time DESC");
 //      4   查询结果

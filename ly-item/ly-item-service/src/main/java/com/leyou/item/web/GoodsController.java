@@ -31,7 +31,7 @@ public class GoodsController {
     public ResponseEntity<PageResult<Spu>> querySpuByPage(
             @RequestParam(value = "page", defaultValue = "1") Integer page,
             @RequestParam(value = "rows", defaultValue = "5") Integer rows,
-            @RequestParam(value = "sortBy", required = false) String sortBy,
+//            @RequestParam(value = "sortBy", required = false) String sortBy,
             @RequestParam(value = "saleable", required = false) Boolean saleable,
             @RequestParam(value = "key", required = false) String key
 
@@ -70,6 +70,11 @@ public class GoodsController {
         return ResponseEntity.ok(goodsService.querySkuListBySpuId(spuId));
     }
 
+    /**
+     * 修改商品
+     * @param spu
+     * @return
+     */
     @PutMapping("goods")
     public ResponseEntity<Void> updateGoods(@RequestBody Spu spu){
         goodsService.updateGoods(spu);

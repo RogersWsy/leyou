@@ -12,6 +12,7 @@ zuul:
   prefix: /api #添加路由前缀
   routes:
     item-service: /item/**
+    search-service: /search/**
     upload-service:
       path: /upload/**
       servicId: upload-service
@@ -32,6 +33,7 @@ ly:
   cors:
     allowedOrigins:
       - http://manage.leyou.com
+      - http://www.leyou.com
     allowCredentials: true
     allowedMethods:
       - OPTIONS
