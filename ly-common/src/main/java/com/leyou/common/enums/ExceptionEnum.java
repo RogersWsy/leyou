@@ -18,6 +18,7 @@ public enum  ExceptionEnum {
     UPDATE_GOODS_ERROR(500,"修改商品失败"),
     FILE_UPLOAD_ERROR(500,"文件上传失败"),
     INVALID_FILE_TYPE(500,"无效的文件类型"),
+    NO_SEARCH_RESULT(404,"没有搜索到商品"),
     ;
 
     private int status;
